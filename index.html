@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Fresear - Fresas con Crema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rojo: #E63946;
+      --blanco: #FFFFFF;
+      --crema: #FFF8F0;
+      --negro: #212529;
+      --gris: #f1f1f1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--crema);
+      color: var(--negro);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--rojo);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      width: 130px;
+      height: auto;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: rgba(255,255,255,0.25);
+    }
+
+    section {
+      padding: 3.5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HERO SECTION - FONDO MÁS CLARO Y TEXTO OSCURO */
+    .hero {
+      text-align: center;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                  url('https://via.placeholder.com/1200x400/FFB6C1/212529?text=Fresas+con+Crema') no-repeat center center;
+      background-size: cover;
+      color: var(--negro);
+      padding: 5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      color: var(--rojo);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      background-color: var(--rojo);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      background-color: #c1121f;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--rojo);
+      margin-bottom: 2.5rem;
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.8rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    }
+
+    /* PRODUCTOS */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background: var(--blanco);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--rojo);
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--rojo);
+      margin: 0.5rem 0;
+    }
+
+    /* ENVÍOS */
+    .highlight {
+      background-color: #ffebee;
+      padding: 1.2rem;
+      border-left: 4px solid var(--rojo);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--negro);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      margin-top: 3rem;
+    }
+
+    footer img {
+      width: 120px;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.4rem; }
+      nav ul { flex-direction: column; gap: 0.5rem; }
+      header { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="https://i.imgur.com/YourLogo.png" alt="Logo A Fresear" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#envios">Envíos</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio" class="hero">
+    <h1>¡A Fresear!</h1>
+    <p>Fresas frescas, crema suave y amor hecho postre. ¡Delicias que enamoran!</p>
+    <a href="#productos" class="cta-button">Ver menú</a>
+  </section>
+
+  <!-- SECCIÓN SOBRE MÍ -->
+  <section id="sobre-mi">
+    <h2 class="section-title">Sobre mí</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+      ¡Hola! Soy [Tu Nombre], y desde hace años preparo fresas con crema con ingredientes frescos y mucha pasión. Cada postre es hecho a mano, pensando en tu sonrisa. ¡Ven a fresear conmigo!
+    </p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <img src="https://via.placeholder.com/500x350/FFE6E6/212529?text=Yo+preparando+fresas" alt="Foto de mí" style="border-radius: 12px; max-width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </section>
+
+  <!-- SECCIÓN SERVICIOS -->
+  <section id="servicios">
+    <h2 class="section-title">¿Qué ofrecemos?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center;">
+        <h3 style="color: var(--rojo); margin-bottom: 1rem;">Entrega a Domicilio</h3>
+        <p>Rápido, seguro y con cariño. ¡Llegamos a tu puerta!</p>
+      </div>
+      <div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center;">
+        <h3 style="color: var(--rojo); margin-bottom: 1rem;">Personalización</h3>
+        <p>Frases, nombres o decoraciones especiales para tu ocasión.</p>
+      </div>
+      <div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center;">
+        <h3 style="color: var(--rojo); margin-bottom: 1rem;">Eventos Especiales</h3>
+        <p>Cumpleaños, aniversarios, bodas… ¡Nos encargamos del postre!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRODUCTOS -->
+  <section id="productos">
+    <h2 class="section-title">Nuestros Productos</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200/FFB6C1/212529?text=Fresita" alt="Fresita" class="product-img">
+        <div class="product-info">
+          <h3>Fresita</h3>
+          <p>Porción individual, perfecta para consentirte.</p>
+          <div class="product-price">$60 MXN</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Fresa" alt="Fresa" class="product-img">
+        <div class="product-info">
+          <h3>Fresa</h3>
+          <p>Porción generosa, ideal para compartir.</p>
+          <div class="product-price">$70 MXN</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200/D63031/FFFFFF?text=Fresota" alt="Fresota" class="product-img">
+        <div class="product-info">
+          <h3>Fresota</h3>
+          <p>¡La más grande y deliciosa! Para los amantes intensos.</p>
+          <div class="product-price">$95 MXN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN ENVÍOS -->
+  <section id="envios">
+    <h2 class="section-title">Envíos</h2>
+    <div class="highlight">
+      🚚 <strong>Mínimo 5 piezas</strong> para entrega a domicilio. ¡Así garantizamos frescura y calidad!
+    </div>
+    <p style="text-align: center; font-size: 1.1rem;">
+      Entregamos en toda la ciudad. Costo de envío: <strong>$25 MXN</strong>.<br>
+      Pedidos de <strong>$500 MXN o más: ¡envío gratis!</strong>
+    </p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <img src="https://via.placeholder.com/600x300/F8F9FA/212529?text=Zona+de+entrega:+CDMX,+Estado+de+México" alt="Zonas de entrega" style="border-radius: 12px; max-width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <img src="https://i.imgur.com/YourLogo.png" alt="Logo A Fresear" class="logo">
+    <p>¿Listo para fresear? ¡Escríbenos!</p>
+    <p>📱 WhatsApp: +52 123 456 7890</p>
+    <p>✉️ contacto@afresear.com</p>
+    <p>📍 Ciudad de México y área metropolitana</p>
+    <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.8;">
+      &copy; 2026 A Fresear. Todos los derechos reservados.
+    </p>
+  </footer>
+
+</body>
+</html>
